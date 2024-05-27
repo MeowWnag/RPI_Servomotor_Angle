@@ -10,14 +10,9 @@ GPIO.setmode(GPIO.BCM)
 
 # 設定伺服馬達的引腳為輸出模式
 GPIO.setup(pin_servo, GPIO.OUT)
-# 設定伺服馬達的轉動頻率
-pwm_servo = GPIO.PWM(pin_servo, 50)  # 50Hz frequency
-# 設定伺服馬達的轉動角度
-pwm_servo.start(0)
 
 # 關閉GPIO
 def destroy():
-    pwm_servo.stop()
     GPIO.cleanup()
 
 # 將轉動角度換算成佔空比
@@ -26,6 +21,10 @@ def convert(x, i_m, i_M, o_m, o_M):
 
 # 設定伺服馬達的轉動角度
 def set_direction(angle):
+    # 設定伺服馬達的轉動頻率
+    pwm_servo = GPIO.PWM(pin_servo, 50)  # 50Hz frequency
+    pwm_servo.start(0)
+    
     # 使用 convert 函數將角度轉換成佔空比
     duty = convert(angle, 0, 180, 1000, 9000) / 1000.0  # 需要將1000-9000的範圍縮放到2-12之間
     pwm_servo.ChangeDutyCycle(duty)
@@ -33,6 +32,9 @@ def set_direction(angle):
     time.sleep(0.3)
     pwm_servo.ChangeDutyCycle(0)
     print("角度=", angle, "-> duty=", duty)
+    
+    # 停止PWM訊號
+    pwm_servo.stop()
 
 if __name__ == "__main__":
     try:
