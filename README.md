@@ -2,7 +2,7 @@
 這個程式是用來控制伺服馬達(Servo motor)的角度用的，接下來會先簡單說明伺服馬達與如何接上樹梅派等
 
 ##  伺服馬達(Servo motor)  
-![image](https://github.com/MeowWnag/RPI_Servomotor_Angle/assets/119922838/e35563a5-1e64-40c5-a396-264e3c8e2789)  
+![image](https://github.com/MeowWnag/RPI_Servomotor_Angle/assets/119922838/1f8cc05d-2de6-46a0-85ba-9eca09c225dc)
 伺服馬達之所以叫做「伺服」馬達，是因為「伺服 servo」表示馬達會依照指示命令動作，由程式要馬達轉幾度，馬達就會轉幾度，但伺服馬達有機械結構上的限制，旋轉的角度是 180 度，但並非完全的 180 度，可能是 1 度到 180 度，或是 -2 度到 177 度都有可能，不過這些誤差都不影響這個範例的實作
 我們可以看到伺服馬達旁拉出3條線，最左邊的黃線是(訊號Pin 9)，紅線是5V，棕線是GND接地
 
