@@ -1,5 +1,5 @@
 # RPI_Servomotor_Angle
-這個程式是用來控制伺服馬達(Servo motor)的角度用的，接下來會先簡單說明伺服馬達與如何接上樹梅派等
+## 這個程式是用來控制伺服馬達(Servo motor)的角度用的，接下來會先簡單說明伺服馬達與如何接上樹梅派等
 
 ##  伺服馬達(Servo motor)  
 ![image](https://github.com/MeowWnag/RPI_Servomotor_Angle/assets/119922838/1f8cc05d-2de6-46a0-85ba-9eca09c225dc)
